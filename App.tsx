@@ -10,15 +10,15 @@ import NotFound from './src/pages/NotFound.tsx';
 import AppLayout from './src/components/AppLayout.tsx';
 import Dashboard from './src/pages/app/Dashboard.tsx';
 import DashboardAnalytics from './src/pages/app/DashboardAnalytics.tsx';
+import IncidentReporting from './src/pages/app/incidents/IncidentReporting.tsx';
+import TaskFeed from './src/pages/app/incidents/TaskFeed.tsx';
 import IncidentRegistration from './src/pages/app/incidents/Registration.tsx';
 import IncidentTriage from './src/pages/app/incidents/Triage.tsx';
-import IncidentDispatch from './src/pages/app/incidents/Dispatch.tsx';
 import IncidentMonitoring from './src/pages/app/incidents/Monitoring.tsx';
 import StatusUpdates from './src/pages/app/incidents/Status.tsx';
 import ActivityLogs from './src/pages/app/incidents/ActivityLogs.tsx';
 import TaskAssignment from './src/pages/app/incidents/Tasks.tsx';
 import CaseInquiry from './src/pages/app/incidents/Inquiry.tsx';
-import IncidentSearch from './src/pages/app/incidents/Search.tsx';
 import EvidenceUpload from './src/pages/app/incidents/EvidenceUpload.tsx';
 import ReviewCaseFiles from './src/pages/app/cases/Review.tsx';
 import CaseLinkAnalysis from './src/pages/app/cases/LinkAnalysis.tsx';
@@ -27,8 +27,10 @@ import CaseHandover from './src/pages/app/cases/Handover.tsx';
 import LegalDocumentGeneration from './src/pages/app/cases/LegalDocs.tsx';
 import UploadEvidence from './src/pages/app/evidence/Upload.tsx';
 import LinkEvidence from './src/pages/app/evidence/Link.tsx';
-import ChainOfCustody from './src/pages/app/evidence/Custody.tsx';
 import EvidenceIntegrityCheck from './src/pages/app/evidence/Integrity.tsx';
+import DigitalCustody from './src/pages/app/security/DigitalCustody.tsx';
+import SentinelMonitoring from './src/pages/app/security/SentinelMonitoring.tsx';
+import GlobalPersonCheck from './src/pages/app/search/GlobalPersonCheck.tsx';
 import AISummary from './src/pages/app/ai/Summary.tsx';
 import AIAlerts from './src/pages/app/ai/Alerts.tsx';
 import PatternAnalysis from './src/pages/app/ai/Patterns.tsx';
@@ -51,16 +53,19 @@ const App: React.FC = () => {
             <Route path="/app" element={<AppLayout />}>
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="dashboard/analytics" element={<DashboardAnalytics />} />
+              <Route path="incidents/reporting" element={<IncidentReporting />} />
+              <Route path="incidents/task-feed" element={<TaskFeed />} />
               <Route path="incidents/registration" element={<IncidentRegistration />} />
               <Route path="incidents/triage" element={<IncidentTriage />} />
-              <Route path="incidents/dispatch" element={<IncidentDispatch />} />
               <Route path="incidents/monitoring" element={<IncidentMonitoring />} />
               <Route path="incidents/status" element={<StatusUpdates />} />
               <Route path="incidents/activity-logs" element={<ActivityLogs />} />
               <Route path="incidents/tasks" element={<TaskAssignment />} />
               <Route path="incidents/inquiry" element={<CaseInquiry />} />
-              <Route path="incidents/search" element={<IncidentSearch />} />
               <Route path="incidents/evidence-upload" element={<EvidenceUpload />} />
+              <Route path="security/digital-custody" element={<DigitalCustody />} />
+              <Route path="search/global-person-check" element={<GlobalPersonCheck />} />
+              <Route path="security/sentinel" element={<SentinelMonitoring />} />
               <Route path="cases/review" element={<ReviewCaseFiles />} />
               <Route path="cases/link-analysis" element={<CaseLinkAnalysis />} />
               <Route path="cases/progress" element={<CaseProgressTracking />} />
@@ -68,7 +73,6 @@ const App: React.FC = () => {
               <Route path="cases/legal-docs" element={<LegalDocumentGeneration />} />
               <Route path="evidence/upload" element={<UploadEvidence />} />
               <Route path="evidence/link" element={<LinkEvidence />} />
-              <Route path="evidence/custody" element={<ChainOfCustody />} />
               <Route path="evidence/integrity" element={<EvidenceIntegrityCheck />} />
               <Route path="ai/summary" element={<AISummary />} />
               <Route path="ai/alerts" element={<AIAlerts />} />

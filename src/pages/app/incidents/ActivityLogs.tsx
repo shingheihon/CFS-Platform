@@ -13,24 +13,24 @@ export default function ActivityLogs() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-white mb-2">Officer Activity Logs</h1>
-        <p className="text-slate-400">Comprehensive timeline of officer actions and incident updates</p>
+        <h1 className="text-3xl font-bold text-slate-900 mb-2">Officer Activity Logs</h1>
+        <p className="text-slate-600">Comprehensive timeline of officer actions and incident updates</p>
       </div>
 
-      <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+      <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <Activity className="w-5 h-5 text-emerald-400" />
+          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <Activity className="w-5 h-5 text-brand-blue" />
             Activity Timeline
           </h2>
           <div className="flex gap-2">
-            <select className="bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <select className="bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue">
               <option>All Officers</option>
               <option>PC Wilson</option>
               <option>PC Thompson</option>
               <option>DI Mitchell</option>
             </select>
-            <select className="bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <select className="bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue">
               <option>Today</option>
               <option>Last 7 Days</option>
               <option>Last 30 Days</option>
@@ -42,19 +42,19 @@ export default function ActivityLogs() {
           {logs.map((log, index) => (
             <div key={index} className="flex gap-4">
               <div className="flex flex-col items-center">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 border-2 border-emerald-500">
-                  <Clock className="w-5 h-5 text-emerald-400" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-blue/10 border-2 border-brand-blue">
+                  <Clock className="w-5 h-5 text-brand-blue" />
                 </div>
                 {index < logs.length - 1 && (
-                  <div className="w-0.5 h-full bg-slate-700 mt-2"></div>
+                  <div className="w-0.5 h-full bg-slate-200 mt-2"></div>
                 )}
               </div>
-              
-              <div className="flex-1 bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4">
+
+              <div className="flex-1 bg-slate-50 border border-slate-200 rounded-lg p-4 mb-4">
                 <div className="flex items-start justify-between mb-2">
                   <div>
-                    <div className="text-white font-semibold mb-1">{log.action}</div>
-                    <div className="flex items-center gap-3 text-sm text-slate-400">
+                    <div className="text-slate-900 font-semibold mb-1">{log.action}</div>
+                    <div className="flex items-center gap-3 text-sm text-slate-500">
                       <span className="flex items-center gap-1">
                         <User className="w-4 h-4" />
                         {log.officer}
@@ -65,13 +65,12 @@ export default function ActivityLogs() {
                   </div>
                   <span className="text-sm text-slate-500">{log.time}</span>
                 </div>
-                <span className={`inline-block px-2 py-1 rounded text-xs font-semibold ${
-                  log.type === 'status' ? 'bg-blue-500/20 text-blue-400' :
-                  log.type === 'dispatch' ? 'bg-emerald-500/20 text-emerald-400' :
-                  log.type === 'evidence' ? 'bg-purple-500/20 text-purple-400' :
-                  log.type === 'investigation' ? 'bg-yellow-500/20 text-yellow-400' :
-                  'bg-slate-500/20 text-slate-400'
-                }`}>
+                <span className={`inline-block px-2 py-1 rounded text-xs font-semibold ${log.type === 'status' ? 'bg-blue-100 text-blue-700' :
+                    log.type === 'dispatch' ? 'bg-green-100 text-green-700' :
+                      log.type === 'evidence' ? 'bg-purple-100 text-purple-700' :
+                        log.type === 'investigation' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-slate-200 text-slate-600'
+                  }`}>
                   {log.type}
                 </span>
               </div>

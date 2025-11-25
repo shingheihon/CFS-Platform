@@ -6,7 +6,7 @@
 
 @layer base {
   html, body {
-    @apply bg-slate-950;
+    @apply bg-brand-cream text-slate-900;
     overscroll-behavior: none;
   }
 }

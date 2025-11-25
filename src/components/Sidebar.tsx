@@ -27,16 +27,47 @@ const navigationItems: NavItem[] = [
     label: 'Incident Management',
     icon: <AlertCircle className="w-5 h-5" />,
     children: [
+      { label: 'Incident Reporting', path: '/app/incidents/reporting', icon: <FileText className="w-4 h-4" /> },
+      { label: 'Task Feed', path: '/app/incidents/task-feed', icon: <FileText className="w-4 h-4" /> },
       { label: 'Incident Registration', path: '/app/incidents/registration', icon: <FileText className="w-4 h-4" /> },
       { label: 'Triage', path: '/app/incidents/triage', icon: <FileText className="w-4 h-4" /> },
-      { label: 'Dispatch', path: '/app/incidents/dispatch', icon: <FileText className="w-4 h-4" /> },
       { label: 'Monitoring', path: '/app/incidents/monitoring', icon: <FileText className="w-4 h-4" /> },
       { label: 'Status Updates', path: '/app/incidents/status', icon: <FileText className="w-4 h-4" /> },
       { label: 'Officer Activity Logs', path: '/app/incidents/activity-logs', icon: <FileText className="w-4 h-4" /> },
       { label: 'Task Assignment', path: '/app/incidents/tasks', icon: <FileText className="w-4 h-4" /> },
-      { label: 'Case Inquiry', path: '/app/incidents/inquiry', icon: <FileText className="w-4 h-4" /> },
-      { label: 'Incident Search', path: '/app/incidents/search', icon: <FileText className="w-4 h-4" /> },
-      { label: 'Evidence Upload', path: '/app/incidents/evidence-upload', icon: <FileText className="w-4 h-4" /> }
+      { label: 'Case Inquiry', path: '/app/incidents/inquiry', icon: <FileText className="w-4 h-4" /> }
+    ]
+  },
+  {
+    label: 'Security',
+    icon: <Shield className="w-5 h-5" />,
+    children: [
+      { label: 'Digital Custody', path: '/app/security/digital-custody', icon: <Shield className="w-4 h-4" /> },
+      { label: 'Global Person Check', path: '/app/search/global-person-check', icon: <Shield className="w-4 h-4" /> },
+      { label: 'Sentinel Monitoring', path: '/app/security/sentinel', icon: <Shield className="w-4 h-4" /> }
+    ]
+  },
+  {
+    label: 'Compliance',
+    icon: <Shield className="w-5 h-5" />,
+    children: [
+      { label: 'GDPR Compliance', path: '/app/compliance/gdpr', icon: <Shield className="w-4 h-4" /> },
+      { label: 'Audit Trail', path: '/app/compliance/audit', icon: <Shield className="w-4 h-4" /> },
+      { label: 'Access Logs', path: '/app/compliance/access-logs', icon: <Shield className="w-4 h-4" /> },
+      { label: 'Retention Policy', path: '/app/compliance/retention', icon: <Shield className="w-4 h-4" /> }
+    ]
+  },
+  {
+    label: 'AI & Intelligence',
+    icon: <Brain className="w-5 h-5" />,
+    children: [
+      { label: 'AI Summary', path: '/app/ai/summary', icon: <Brain className="w-4 h-4" /> },
+      { label: 'AI Alerts', path: '/app/ai/alerts', icon: <Brain className="w-4 h-4" /> },
+      { label: 'Pattern Analysis', path: '/app/ai/patterns', icon: <Brain className="w-4 h-4" /> },
+      { label: 'Crime Predictions', path: '/app/ai/predictions', icon: <Brain className="w-4 h-4" /> },
+      { label: 'Hotspot Detection', path: '/app/ai/hotspots', icon: <Brain className="w-4 h-4" /> },
+      { label: 'CCTV Viewer', path: '/app/ai/cctv', icon: <Brain className="w-4 h-4" /> },
+      { label: 'OSINT Feed', path: '/app/ai/osint', icon: <Brain className="w-4 h-4" /> }
     ]
   },
   {
@@ -56,21 +87,7 @@ const navigationItems: NavItem[] = [
     children: [
       { label: 'Upload Evidence', path: '/app/evidence/upload', icon: <FileText className="w-4 h-4" /> },
       { label: 'Link Evidence to Incident', path: '/app/evidence/link', icon: <FileText className="w-4 h-4" /> },
-      { label: 'Chain of Custody', path: '/app/evidence/custody', icon: <FileText className="w-4 h-4" /> },
       { label: 'Evidence Integrity Check', path: '/app/evidence/integrity', icon: <FileText className="w-4 h-4" /> }
-    ]
-  },
-  {
-    label: 'AI & Intelligence',
-    icon: <Brain className="w-5 h-5" />,
-    children: [
-      { label: 'AI Summary', path: '/app/ai/summary', icon: <Brain className="w-4 h-4" /> },
-      { label: 'AI Alerts', path: '/app/ai/alerts', icon: <Brain className="w-4 h-4" /> },
-      { label: 'Pattern Analysis', path: '/app/ai/patterns', icon: <Brain className="w-4 h-4" /> },
-      { label: 'Crime Predictions', path: '/app/ai/predictions', icon: <Brain className="w-4 h-4" /> },
-      { label: 'Hotspot Detection', path: '/app/ai/hotspots', icon: <Brain className="w-4 h-4" /> },
-      { label: 'CCTV Viewer', path: '/app/ai/cctv', icon: <Brain className="w-4 h-4" /> },
-      { label: 'OSINT Feed', path: '/app/ai/osint', icon: <Brain className="w-4 h-4" /> }
     ]
   },
   {
@@ -80,25 +97,6 @@ const navigationItems: NavItem[] = [
       { label: 'Daily Reports', path: '/app/reports/daily', icon: <FileText className="w-4 h-4" /> },
       { label: 'KPIs & Analytics', path: '/app/reports/kpis', icon: <FileText className="w-4 h-4" /> },
       { label: 'Export Reports', path: '/app/reports/export', icon: <FileText className="w-4 h-4" /> }
-    ]
-  },
-  {
-    label: 'Compliance',
-    icon: <Shield className="w-5 h-5" />,
-    children: [
-      { label: 'GDPR Compliance', path: '/app/compliance/gdpr', icon: <Shield className="w-4 h-4" /> },
-      { label: 'Audit Trail', path: '/app/compliance/audit', icon: <Shield className="w-4 h-4" /> },
-      { label: 'Access Logs', path: '/app/compliance/access-logs', icon: <Shield className="w-4 h-4" /> },
-      { label: 'Retention Policy', path: '/app/compliance/retention', icon: <Shield className="w-4 h-4" /> }
-    ]
-  },
-  {
-    label: 'Security',
-    icon: <Shield className="w-5 h-5" />,
-    children: [
-      { label: 'Threat Detection', path: '/app/security/threats', icon: <Shield className="w-4 h-4" /> },
-      { label: 'Zero-Trust Access', path: '/app/security/zero-trust', icon: <Shield className="w-4 h-4" /> },
-      { label: 'Monitoring Widgets', path: '/app/security/monitoring', icon: <Shield className="w-4 h-4" /> }
     ]
   },
   {
@@ -163,6 +161,9 @@ const isImplemented = (path?: string) => {
   if (path.startsWith('/app/ai')) return true;
   if (path.startsWith('/app/reports')) return true;
   if (path === '/app/compliance/gdpr') return true;
+  if (path === '/app/security/digital-custody') return true;
+  if (path === '/app/security/sentinel') return true;
+  if (path === '/app/search/global-person-check') return true;
   return false;
 };
 
@@ -187,7 +188,7 @@ const Sidebar: React.FC = () => {
         {item.children ? (
           <button
             onClick={() => toggleExpand(item.label)}
-            className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${depth === 0 ? 'text-slate-300 hover:bg-slate-800' : 'text-slate-400 hover:bg-slate-800 pl-8'
+            className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${depth === 0 ? 'text-slate-200 hover:bg-brand-blue/80' : 'text-slate-300 hover:bg-brand-blue/80 pl-8'
               }`}
           >
             <div className="flex items-center gap-3">
@@ -201,10 +202,10 @@ const Sidebar: React.FC = () => {
             to={item.path || '#'}
             onClick={() => setIsMobileOpen(false)}
             className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${isActive
-                ? 'bg-emerald-600 text-white'
-                : depth === 0
-                  ? 'text-slate-300 hover:bg-slate-800'
-                  : 'text-slate-400 hover:bg-slate-800 pl-12'
+              ? 'bg-brand-yellow text-brand-blue font-semibold'
+              : depth === 0
+                ? 'text-slate-200 hover:bg-brand-blue/80'
+                : 'text-slate-300 hover:bg-brand-blue/80 pl-12'
               }`}
           >
             {item.icon}
@@ -217,8 +218,8 @@ const Sidebar: React.FC = () => {
               toast.info("Haven't built yet!", { position: "bottom-right" });
             }}
             className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${depth === 0
-                ? 'text-slate-300 hover:bg-slate-800'
-                : 'text-slate-400 hover:bg-slate-800 pl-12'
+              ? 'text-slate-200 hover:bg-brand-blue/80'
+              : 'text-slate-300 hover:bg-brand-blue/80 pl-12'
               }`}
           >
             {item.icon}
@@ -226,7 +227,7 @@ const Sidebar: React.FC = () => {
           </button>
         )}
         {item.children && isExpanded && (
-          <div className="bg-slate-900">
+          <div className="bg-brand-blue/50">
             {item.children.map(child => (
               <NavItemComponent key={child.label} item={child} depth={depth + 1} />
             ))}
@@ -240,21 +241,20 @@ const Sidebar: React.FC = () => {
     <>
       <button
         onClick={() => setIsMobileOpen(!isMobileOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 bg-slate-800 p-2 rounded-lg text-white"
+        className="lg:hidden fixed top-4 left-4 z-50 bg-brand-blue p-2 rounded-lg text-white"
       >
         {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
       <aside
-        className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-slate-900 border-r border-slate-800 overflow-y-auto transition-transform duration-300 ${isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-brand-blue border-r border-brand-blue/80 overflow-y-auto transition-transform duration-300 ${isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
           }`}
       >
-        <div className="p-4 border-b border-slate-800">
+        <div className="p-4 border-b border-brand-blue/80">
           <div className="flex items-center gap-3">
-            <Shield className="w-8 h-8 text-emerald-400" />
-            <div>
-              <div className="text-white font-bold">CFS Platform</div>
-              <div className="text-emerald-400 text-xs">MCP Orchestration</div>
+            <Shield className="w-8 h-8 text-brand-yellow" />
+            <div className="flex flex-col">
+              <span className="font-bold text-lg tracking-tight text-white">CFS Platform</span>
             </div>
           </div>
         </div>

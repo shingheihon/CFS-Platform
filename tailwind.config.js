@@ -10,6 +10,13 @@ export default {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
       },
+      colors: {
+        brand: {
+          cream: '#FDFBF7',
+          blue: '#003366',
+          yellow: '#FFC107',
+        }
+      }
     },
   },
   plugins: [],
