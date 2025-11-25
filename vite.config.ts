@@ -1,8 +1,8 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
-export default defineConfig({
-  base: '/CFS-Platform/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/CFS-Platform/' : '/',
   plugins: [react()],
   server: {
     allowedHosts: true,
@@ -40,4 +40,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
